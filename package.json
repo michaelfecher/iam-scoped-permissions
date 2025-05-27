@@ -1,0 +1,52 @@
+{
+  "name": "iam-scoped-permissions",
+  "version": "1.0.0",
+  "description": "Analyze AWS CloudFormation stacks and CloudWatch logs for missing IAM permissions",
+  "main": "dist/src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "aws",
+    "cloudformation",
+    "iam",
+    "permissions",
+    "least-privilege"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-cloudformation": "^3.693.0",
+    "@aws-sdk/client-cloudwatch-logs": "^3.693.0",
+    "@aws-sdk/client-iam": "^3.693.0",
+    "@aws-sdk/client-sts": "^3.693.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.2",
+    "ts-jest": "^29.2.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.15.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

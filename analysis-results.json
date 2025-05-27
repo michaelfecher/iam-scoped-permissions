@@ -1,0 +1,738 @@
+
+> iam-scoped-permissions@1.0.0 start
+> node dist/src/index.js analyze -s cdk-test-dev -r eu-west-1 --json
+
+🔍 IAM Scoped Permissions Analyzer
+======================================
+
+Analyzing stack: cdk-test-dev
+Region: eu-west-1
+Lookback period: 7 days
+Max events per log group: 1000
+
+Starting analysis of CloudFormation stack: cdk-test-dev
+Found 38 resources in stack
+Analyzing 36 log groups
+No results with filter for cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE, trying without filter...
+Found 98 events without filter in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE
+Sample event: {"details":{"input":"{\"prefix\":\"data\",\"objectKey\":\"test-file.json\",\"body\":{\"message\":\"Hello from Step Function test!\",\"timestamp\":\"2025-05-27T01:18:00Z\",\"testData\":{\"userId\":\"te...
+Sample event: {"details":{"input":"{\"prefix\":\"data\",\"objectKey\":\"test-file.json\",\"body\":{\"message\":\"Hello from Step Function test!\",\"timestamp\":\"2025-05-27T01:18:00Z\",\"testData\":{\"userId\":\"te...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m\",\"Payload\":{\"prefix\":\"data\",\"objectKey\":\"test-file....
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"4","type":"TaskStarted","previous_event_id":"3","event_timestamp":"1748301561605","execution_arn":"arn:aws:states:eu-...
+Sample event: {"details":{"cause":"{\"errorType\":\"Runtime.ImportModuleError\",\"errorMessage\":\"Error: Cannot find module 'index'\\nRequire stack:\\n- /var/runtime/index.mjs\",\"trace\":[\"Runtime.ImportModuleEr...
+Sample event: {"details":{"cause":"{\"errorType\":\"Runtime.ImportModuleError\",\"errorMessage\":\"Error: Cannot find module 'index'\\nRequire stack:\\n- /var/runtime/index.mjs\",\"trace\":[\"Runtime.ImportModuleEr...
+Sample event: {"details":{"redriveCount":1},"redrive_count":"0","id":"7","type":"ExecutionRedriven","previous_event_id":"6","event_timestamp":"1748301811390","execution_arn":"arn:aws:states:eu-west-1:396913727235:e...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m\",\"Payload\":{\"prefix\":\"data\",\"objectKey\":\"test-file....
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"9","type":"TaskStarted","previous_event_id":"8","event_timestamp":"1748301811459","execution_arn":"arn:aws:states:eu-...
+Sample event: {"details":{"output":"{\"ExecutedVersion\":\"$LATEST\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\"...
+Sample event: {"details":{"name":"WriteToS3Task","output":"{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\",\"key\":\"data/test-f...
+Sample event: {"details":{"input":"{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\",\"key\":\"data/test-file.json\"}}","inputDeta...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"Ob...
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"14","type":"TaskStarted","previous_event_id":"13","event_timestamp":"1748301813214","execution_arn":"arn:aws:states:e...
+Sample event: {"details":{"output":"{\"ExecutedVersion\":\"$LATEST\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748301813759\",\"writtenMe...
+Sample event: {"details":{"name":"WriteToDynamoTask","output":"{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748301813759\",\"writtenMessage\":\"hello\",...
+Sample event: {"details":{"input":"{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748301813759\",\"writtenMessage\":\"hello\",\"retrievedMessage\":\"hello...
+Sample event: {"details":{"cause":"An error occurred while executing the state 'ReadFromS3Task' (entered at the event id #17). The JSONPath '$.body.key' specified for the field 'key.$' could not be found in the inp...
+Sample event: {"details":{"input":"{\"prefix\":\"data\",\"objectKey\":\"test-file.json\",\"body\":{\"message\":\"Hello from Step Function test!\",\"timestamp\":\"2025-05-27T01:30:00Z\",\"testData\":{\"userId\":\"te...
+Sample event: {"details":{"input":"{\"prefix\":\"data\",\"objectKey\":\"test-file.json\",\"body\":{\"message\":\"Hello from Step Function test!\",\"timestamp\":\"2025-05-27T01:30:00Z\",\"testData\":{\"userId\":\"te...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m\",\"Payload\":{\"prefix\":\"data\",\"objectKey\":\"test-file....
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"4","type":"TaskStarted","previous_event_id":"3","event_timestamp":"1748302168531","execution_arn":"arn:aws:states:eu-...
+Sample event: {"details":{"output":"{\"ExecutedVersion\":\"$LATEST\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\"...
+Sample event: {"details":{"name":"WriteToS3Task","output":"{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\",\"key\":\"data/test-f...
+Sample event: {"details":{"input":"{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\",\"key\":\"data/test-file.json\"}}","inputDeta...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"Ob...
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"9","type":"TaskStarted","previous_event_id":"8","event_timestamp":"1748302170328","execution_arn":"arn:aws:states:eu-...
+Sample event: {"details":{"output":"{\"ExecutedVersion\":\"$LATEST\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748302170852\",\"writtenMe...
+Sample event: {"details":{"name":"WriteToDynamoTask","output":"{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748302170852\",\"writtenMessage\":\"hello\",...
+Sample event: {"details":{"input":"{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748302170852\",\"writtenMessage\":\"hello\",\"retrievedMessage\":\"hello...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61\",\"Payload\":{\"bucket\":\"cdk-test-dev-databuckete3889a50-x7...
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"14","type":"TaskStarted","previous_event_id":"13","event_timestamp":"1748302171958","execution_arn":"arn:aws:states:e...
+Sample event: {"details":{"cause":"{\"errorType\":\"AccessDenied\",\"errorMessage\":\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A2...
+Sample event: {"details":{"cause":"{\"errorType\":\"AccessDenied\",\"errorMessage\":\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A2...
+Sample event: {"details":{"redriveCount":1},"redrive_count":"0","id":"17","type":"ExecutionRedriven","previous_event_id":"16","event_timestamp":"1748302713000","execution_arn":"arn:aws:states:eu-west-1:396913727235...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61\",\"Payload\":{\"bucket\":\"cdk-test-dev-databuckete3889a50-x7...
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"19","type":"TaskStarted","previous_event_id":"18","event_timestamp":"1748302713072","execution_arn":"arn:aws:states:e...
+Sample event: {"details":{"cause":"{\"errorType\":\"AccessDenied\",\"errorMessage\":\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A2...
+Sample event: {"details":{"cause":"{\"errorType\":\"AccessDenied\",\"errorMessage\":\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A2...
+Sample event: {"details":{"input":"{\"prefix\":\"data\",\"objectKey\":\"test-file.json\",\"body\":{\"message\":\"Hello from Step Function test!\",\"timestamp\":\"2025-05-27T01:35:00Z\",\"testData\":{\"userId\":\"te...
+Sample event: {"details":{"input":"{\"prefix\":\"data\",\"objectKey\":\"test-file.json\",\"body\":{\"message\":\"Hello from Step Function test!\",\"timestamp\":\"2025-05-27T01:35:00Z\",\"testData\":{\"userId\":\"te...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m\",\"Payload\":{\"prefix\":\"data\",\"objectKey\":\"test-file....
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"4","type":"TaskStarted","previous_event_id":"3","event_timestamp":"1748302781657","execution_arn":"arn:aws:states:eu-...
+Sample event: {"details":{"output":"{\"ExecutedVersion\":\"$LATEST\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\"...
+Sample event: {"details":{"name":"WriteToS3Task","output":"{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\",\"key\":\"data/test-f...
+Sample event: {"details":{"input":"{\"statusCode\":200,\"body\":{\"message\":\"Object written successfully\",\"bucket\":\"cdk-test-dev-databuckete3889a50-x7o7y3babxi6\",\"key\":\"data/test-file.json\"}}","inputDeta...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"Ob...
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"9","type":"TaskStarted","previous_event_id":"8","event_timestamp":"1748302783472","execution_arn":"arn:aws:states:eu-...
+Sample event: {"details":{"output":"{\"ExecutedVersion\":\"$LATEST\",\"Payload\":{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748302783999\",\"writtenMe...
+Sample event: {"details":{"name":"WriteToDynamoTask","output":"{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748302783999\",\"writtenMessage\":\"hello\",...
+Sample event: {"details":{"input":"{\"statusCode\":200,\"body\":{\"message\":\"DynamoDB operation completed successfully\",\"itemId\":\"item-1748302783999\",\"writtenMessage\":\"hello\",\"retrievedMessage\":\"hello...
+Sample event: {"details":{"parameters":"{\"FunctionName\":\"arn:aws:lambda:eu-west-1:396913727235:function:cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61\",\"Payload\":{\"bucket\":\"cdk-test-dev-databuckete3889a50-x7...
+Sample event: {"details":{"resource":"invoke","resourceType":"lambda"},"redrive_count":"0","id":"14","type":"TaskStarted","previous_event_id":"13","event_timestamp":"1748302785129","execution_arn":"arn:aws:states:e...
+Sample event: {"details":{"cause":"{\"errorType\":\"AccessDenied\",\"errorMessage\":\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A2...
+Found permission denials in 1 log groups
+Generated 4 permission suggestions
+{
+  "stackName": "cdk-test-dev",
+  "stackId": "arn:aws:cloudformation:eu-west-1:396913727235:stack/cdk-test-dev/4a7bb240-3a84-11f0-b717-068c04038a25",
+  "region": "eu-west-1",
+  "resources": [
+    {
+      "logicalId": "AccessLogsBucket83982689",
+      "physicalId": "cdk-test-dev-accesslogsbucket83982689-88ukb79krigg",
+      "resourceType": "AWS::S3::Bucket",
+      "logGroups": [
+        "/aws/s3/cdk-test-dev-accesslogsbucket83982689-88ukb79krigg"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "AccessLogsBucketAutoDeleteObjectsCustomResource93F9213A",
+      "physicalId": "cdk-test-dev-accesslogsbucket83982689-88ukb79krigg",
+      "resourceType": "Custom::S3AutoDeleteObjects",
+      "logGroups": [
+        "/aws/s3autodeleteobjects/cdk-test-dev-accesslogsbucket83982689-88ukb79krigg"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "AccessLogsBucketPolicy7F77476F",
+      "physicalId": "cdk-test-dev-accesslogsbucket83982689-88ukb79krigg",
+      "resourceType": "AWS::S3::BucketPolicy",
+      "logGroups": [
+        "/aws/s3/cdk-test-dev-accesslogsbucket83982689-88ukb79krigg"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "CDKMetadata",
+      "physicalId": "4a7bb240-3a84-11f0-b717-068c04038a25",
+      "resourceType": "AWS::CDK::Metadata",
+      "logGroups": [
+        "/aws/cdk/4a7bb240-3a84-11f0-b717-068c04038a25"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "physicalId": "cdk-test-dev-CustomS3AutoDeleteObjectsCustomResour-LxxB9jzwSqHT",
+      "resourceType": "AWS::Lambda::Function",
+      "logGroups": [
+        "/aws/lambda/cdk-test-dev-CustomS3AutoDeleteObjectsCustomResour-LxxB9jzwSqHT"
+      ],
+      "associatedRoles": [
+        "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F-ExecutionRole"
+      ],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+      "physicalId": "cdk-test-dev-CustomS3AutoDeleteObjectsCustomResourc-leVSacktUnX1",
+      "resourceType": "AWS::IAM::Role",
+      "logGroups": [
+        "/aws/iam/cdk-test-dev-CustomS3AutoDeleteObjectsCustomResourc-leVSacktUnX1"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DataBucketAutoDeleteObjectsCustomResource9FB51BF3",
+      "physicalId": "cdk-test-dev-databuckete3889a50-x7o7y3babxi6",
+      "resourceType": "Custom::S3AutoDeleteObjects",
+      "logGroups": [
+        "/aws/s3autodeleteobjects/cdk-test-dev-databuckete3889a50-x7o7y3babxi6"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DataBucketE3889A50",
+      "physicalId": "cdk-test-dev-databuckete3889a50-x7o7y3babxi6",
+      "resourceType": "AWS::S3::Bucket",
+      "logGroups": [
+        "/aws/s3/cdk-test-dev-databuckete3889a50-x7o7y3babxi6"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DataBucketPolicy3231C704",
+      "physicalId": "cdk-test-dev-databuckete3889a50-x7o7y3babxi6",
+      "resourceType": "AWS::S3::BucketPolicy",
+      "logGroups": [
+        "/aws/s3/cdk-test-dev-databuckete3889a50-x7o7y3babxi6"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DataProcessingStateMachine0D2DFF93",
+      "physicalId": "arn:aws:states:eu-west-1:396913727235:stateMachine:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS",
+      "resourceType": "AWS::StepFunctions::StateMachine",
+      "logGroups": [
+        "/aws/stepfunctions/arn:aws:states:eu-west-1:396913727235:stateMachine:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS"
+      ],
+      "associatedRoles": [
+        "DataProcessingStateMachine0D2DFF93-ExecutionRole"
+      ],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DataProcessingStateMachineRoleCF15CC21",
+      "physicalId": "cdk-test-dev-DataProcessingStateMachineRoleCF15CC21-7g7pH1zERSCZ",
+      "resourceType": "AWS::IAM::Role",
+      "logGroups": [
+        "/aws/iam/cdk-test-dev-DataProcessingStateMachineRoleCF15CC21-7g7pH1zERSCZ"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DataProcessingStateMachineRoleDefaultPolicy9875C1A2",
+      "physicalId": "cdk-t-DataP-Bo67nObZLgxx",
+      "resourceType": "AWS::IAM::Policy",
+      "logGroups": [
+        "/aws/iam/cdk-t-DataP-Bo67nObZLgxx"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DataTable447BC44E",
+      "physicalId": "cdk-test-dev-DataTable447BC44E-VMHULEIDSOAU",
+      "resourceType": "AWS::DynamoDB::Table",
+      "logGroups": [
+        "/aws/dynamodb/cdk-test-dev-DataTable447BC44E-VMHULEIDSOAU"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DynamoLambda6C02E165",
+      "physicalId": "cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww",
+      "resourceType": "AWS::Lambda::Function",
+      "logGroups": [
+        "/aws/lambda/cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww"
+      ],
+      "associatedRoles": [
+        "DynamoLambda6C02E165-ExecutionRole"
+      ],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DynamoLambdaDeadLetterQueueAEDF24FF",
+      "physicalId": "https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-DynamoLambdaDeadLetterQueueAEDF24FF-fN0ezTRglxsn",
+      "resourceType": "AWS::SQS::Queue",
+      "logGroups": [
+        "/aws/sqs/https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-DynamoLambdaDeadLetterQueueAEDF24FF-fN0ezTRglxsn"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DynamoLambdaLogRetentionBA142A6A",
+      "physicalId": "/aws/lambda/cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww",
+      "resourceType": "Custom::LogRetention",
+      "logGroups": [
+        "/aws/logretention//aws/lambda/cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DynamoLambdaServiceRoleA2631765",
+      "physicalId": "cdk-test-dev-DynamoLambdaServiceRoleA2631765-bPaa3lxMj2Dm",
+      "resourceType": "AWS::IAM::Role",
+      "logGroups": [
+        "/aws/iam/cdk-test-dev-DynamoLambdaServiceRoleA2631765-bPaa3lxMj2Dm"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "DynamoLambdaServiceRoleDefaultPolicyECE70A9E",
+      "physicalId": "cdk-t-Dynam-oqmdPLQbb4nD",
+      "resourceType": "AWS::IAM::Policy",
+      "logGroups": [
+        "/aws/iam/cdk-t-Dynam-oqmdPLQbb4nD"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "EncryptionKey1B843E66",
+      "physicalId": "456f2a84-04f3-4fad-9166-4f9b7fbb2f51",
+      "resourceType": "AWS::KMS::Key",
+      "logGroups": [
+        "/aws/kms/456f2a84-04f3-4fad-9166-4f9b7fbb2f51"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+      "physicalId": "cdk-test-dev-LogRetentionaae0aa3c5b4d4f87b02d85b20-u29zGGVqRF1i",
+      "resourceType": "AWS::Lambda::Function",
+      "logGroups": [
+        "/aws/lambda/cdk-test-dev-LogRetentionaae0aa3c5b4d4f87b02d85b20-u29zGGVqRF1i"
+      ],
+      "associatedRoles": [
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A-ExecutionRole"
+      ],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+      "physicalId": "cdk-test-dev-LogRetentionaae0aa3c5b4d4f87b02d85b201-5QepvrZ97jfC",
+      "resourceType": "AWS::IAM::Role",
+      "logGroups": [
+        "/aws/iam/cdk-test-dev-LogRetentionaae0aa3c5b4d4f87b02d85b201-5QepvrZ97jfC"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+      "physicalId": "cdk-t-LogRe-d4ExWx40BzoT",
+      "resourceType": "AWS::IAM::Policy",
+      "logGroups": [
+        "/aws/iam/cdk-t-LogRe-d4ExWx40BzoT"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "NotificationTopicEB7A0DF1",
+      "physicalId": "arn:aws:sns:eu-west-1:396913727235:cdk-test-dev-NotificationTopicEB7A0DF1-dfqNJHNH6Kwr",
+      "resourceType": "AWS::SNS::Topic",
+      "logGroups": [
+        "/aws/sns/arn:aws:sns:eu-west-1:396913727235:cdk-test-dev-NotificationTopicEB7A0DF1-dfqNJHNH6Kwr"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ProcessingDeadLetterQueueE13B1352",
+      "physicalId": "https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-ProcessingDeadLetterQueueE13B1352-lasS7gxZY3mm",
+      "resourceType": "AWS::SQS::Queue",
+      "logGroups": [
+        "/aws/sqs/https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-ProcessingDeadLetterQueueE13B1352-lasS7gxZY3mm"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ProcessingDeadLetterQueuePolicy34517361",
+      "physicalId": "cdk-test-dev-ProcessingDeadLetterQueuePolicy34517361-IzQ9OgTV38l6",
+      "resourceType": "AWS::SQS::QueuePolicy",
+      "logGroups": [
+        "/aws/sqs/cdk-test-dev-ProcessingDeadLetterQueuePolicy34517361-IzQ9OgTV38l6"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ProcessingQueue6DC600C3",
+      "physicalId": "https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-ProcessingQueue6DC600C3-pMRVL3keEc3l",
+      "resourceType": "AWS::SQS::Queue",
+      "logGroups": [
+        "/aws/sqs/https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-ProcessingQueue6DC600C3-pMRVL3keEc3l"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ProcessingQueuePolicyDDFFDBBA",
+      "physicalId": "cdk-test-dev-ProcessingQueuePolicyDDFFDBBA-vVQTfLS4Nb00",
+      "resourceType": "AWS::SQS::QueuePolicy",
+      "logGroups": [
+        "/aws/sqs/cdk-test-dev-ProcessingQueuePolicyDDFFDBBA-vVQTfLS4Nb00"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ReadLambda25A29444",
+      "physicalId": "cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+      "resourceType": "AWS::Lambda::Function",
+      "logGroups": [
+        "/aws/lambda/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61"
+      ],
+      "associatedRoles": [
+        "ReadLambda25A29444-ExecutionRole"
+      ],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ReadLambdaDeadLetterQueueB47063C1",
+      "physicalId": "https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-ReadLambdaDeadLetterQueueB47063C1-0yphxwdsqQWB",
+      "resourceType": "AWS::SQS::Queue",
+      "logGroups": [
+        "/aws/sqs/https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-ReadLambdaDeadLetterQueueB47063C1-0yphxwdsqQWB"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ReadLambdaLogRetentionE22F4776",
+      "physicalId": "/aws/lambda/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+      "resourceType": "Custom::LogRetention",
+      "logGroups": [
+        "/aws/logretention//aws/lambda/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ReadLambdaServiceRole786C9B4A",
+      "physicalId": "cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX",
+      "resourceType": "AWS::IAM::Role",
+      "logGroups": [
+        "/aws/iam/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "ReadLambdaServiceRoleDefaultPolicy6518FF35",
+      "physicalId": "cdk-t-ReadL-Ac7T6TGT1hLn",
+      "resourceType": "AWS::IAM::Policy",
+      "logGroups": [
+        "/aws/iam/cdk-t-ReadL-Ac7T6TGT1hLn"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "StepFunctionLogGroup5D8A5468",
+      "physicalId": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+      "resourceType": "AWS::Logs::LogGroup",
+      "logGroups": [
+        "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "WriteLambda0E72B4A4",
+      "physicalId": "cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m",
+      "resourceType": "AWS::Lambda::Function",
+      "logGroups": [
+        "/aws/lambda/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m"
+      ],
+      "associatedRoles": [
+        "WriteLambda0E72B4A4-ExecutionRole"
+      ],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "WriteLambdaDeadLetterQueue91042643",
+      "physicalId": "https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-WriteLambdaDeadLetterQueue91042643-MQpPxWSm65aT",
+      "resourceType": "AWS::SQS::Queue",
+      "logGroups": [
+        "/aws/sqs/https://sqs.eu-west-1.amazonaws.com/396913727235/cdk-test-dev-WriteLambdaDeadLetterQueue91042643-MQpPxWSm65aT"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "WriteLambdaLogRetention15328B6F",
+      "physicalId": "/aws/lambda/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m",
+      "resourceType": "Custom::LogRetention",
+      "logGroups": [
+        "/aws/logretention//aws/lambda/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "WriteLambdaServiceRole903EC6B6",
+      "physicalId": "cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl",
+      "resourceType": "AWS::IAM::Role",
+      "logGroups": [
+        "/aws/iam/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    },
+    {
+      "logicalId": "WriteLambdaServiceRoleDefaultPolicyEDE3046D",
+      "physicalId": "cdk-t-Write-H71jt3obuFyt",
+      "resourceType": "AWS::IAM::Policy",
+      "logGroups": [
+        "/aws/iam/cdk-t-Write-H71jt3obuFyt"
+      ],
+      "associatedRoles": [],
+      "associatedPolicies": []
+    }
+  ],
+  "logAnalysisResults": [
+    {
+      "logGroupName": "/aws/lambda/cdk-test-dev-CustomS3AutoDeleteObjectsCustomResour-LxxB9jzwSqHT",
+      "associatedResource": {
+        "logicalId": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+        "physicalId": "cdk-test-dev-CustomS3AutoDeleteObjectsCustomResour-LxxB9jzwSqHT",
+        "resourceType": "AWS::Lambda::Function",
+        "logGroups": [
+          "/aws/lambda/cdk-test-dev-CustomS3AutoDeleteObjectsCustomResour-LxxB9jzwSqHT"
+        ],
+        "associatedRoles": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F-ExecutionRole"
+        ],
+        "associatedPolicies": []
+      },
+      "permissionDenials": [],
+      "totalEvents": 0,
+      "timeRange": {
+        "start": "2025-05-20T05:53:44.282Z",
+        "end": "2025-05-27T05:53:44.282Z"
+      }
+    },
+    {
+      "logGroupName": "/aws/lambda/cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww",
+      "associatedResource": {
+        "logicalId": "DynamoLambda6C02E165",
+        "physicalId": "cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww",
+        "resourceType": "AWS::Lambda::Function",
+        "logGroups": [
+          "/aws/lambda/cdk-test-dev-DynamoLambda6C02E165-mrGsmrBaInww"
+        ],
+        "associatedRoles": [
+          "DynamoLambda6C02E165-ExecutionRole"
+        ],
+        "associatedPolicies": []
+      },
+      "permissionDenials": [],
+      "totalEvents": 0,
+      "timeRange": {
+        "start": "2025-05-20T05:53:44.282Z",
+        "end": "2025-05-27T05:53:44.282Z"
+      }
+    },
+    {
+      "logGroupName": "/aws/lambda/cdk-test-dev-LogRetentionaae0aa3c5b4d4f87b02d85b20-u29zGGVqRF1i",
+      "associatedResource": {
+        "logicalId": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+        "physicalId": "cdk-test-dev-LogRetentionaae0aa3c5b4d4f87b02d85b20-u29zGGVqRF1i",
+        "resourceType": "AWS::Lambda::Function",
+        "logGroups": [
+          "/aws/lambda/cdk-test-dev-LogRetentionaae0aa3c5b4d4f87b02d85b20-u29zGGVqRF1i"
+        ],
+        "associatedRoles": [
+          "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A-ExecutionRole"
+        ],
+        "associatedPolicies": []
+      },
+      "permissionDenials": [],
+      "totalEvents": 0,
+      "timeRange": {
+        "start": "2025-05-20T05:53:44.282Z",
+        "end": "2025-05-27T05:53:44.282Z"
+      }
+    },
+    {
+      "logGroupName": "/aws/lambda/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+      "associatedResource": {
+        "logicalId": "ReadLambda25A29444",
+        "physicalId": "cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+        "resourceType": "AWS::Lambda::Function",
+        "logGroups": [
+          "/aws/lambda/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61"
+        ],
+        "associatedRoles": [
+          "ReadLambda25A29444-ExecutionRole"
+        ],
+        "associatedPolicies": []
+      },
+      "permissionDenials": [],
+      "totalEvents": 0,
+      "timeRange": {
+        "start": "2025-05-20T05:53:44.282Z",
+        "end": "2025-05-27T05:53:44.282Z"
+      }
+    },
+    {
+      "logGroupName": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+      "associatedResource": {
+        "logicalId": "StepFunctionLogGroup5D8A5468",
+        "physicalId": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+        "resourceType": "AWS::Logs::LogGroup",
+        "logGroups": [
+          "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE"
+        ],
+        "associatedRoles": [],
+        "associatedPolicies": []
+      },
+      "permissionDenials": [
+        {
+          "timestamp": "2025-05-26T23:29:33.689Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-26-23/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:33:22\\\"]}\",\"error\":\"AccessDenied\",\"resource\":\"invoke\",\"resourceType\":\"lambda\"},\"redrive_count\":\"0\",\"id\":\"15\",\"type\":\"TaskFailed\",\"previous_event_id\":\"14\",\"event_timestamp\":\"1748302173689\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+          "action": "s3:GetObject",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-26T23:29:33.726Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-26-23/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:33:22\\\"]}\",\"error\":\"AccessDenied\"},\"redrive_count\":\"0\",\"id\":\"16\",\"type\":\"ExecutionFailed\",\"previous_event_id\":\"15\",\"event_timestamp\":\"1748302173726\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+          "action": "s3:GetObject",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-26T23:38:34.792Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-26-23/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:33:22\\\"]}\",\"error\":\"AccessDenied\",\"resource\":\"invoke\",\"resourceType\":\"lambda\"},\"redrive_count\":\"0\",\"id\":\"20\",\"type\":\"TaskFailed\",\"previous_event_id\":\"19\",\"event_timestamp\":\"1748302714792\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+          "action": "s3:GetObject",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-26T23:38:34.829Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-26-23/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:33:22\\\"]}\",\"error\":\"AccessDenied\"},\"redrive_count\":\"1\",\"id\":\"21\",\"type\":\"ExecutionFailed\",\"previous_event_id\":\"20\",\"event_timestamp\":\"1748302714829\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+          "action": "s3:GetObject",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-26T23:39:45.780Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-26-23/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:33:22\\\"]}\",\"error\":\"AccessDenied\",\"resource\":\"invoke\",\"resourceType\":\"lambda\"},\"redrive_count\":\"0\",\"id\":\"15\",\"type\":\"TaskFailed\",\"previous_event_id\":\"14\",\"event_timestamp\":\"1748302785780\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:20693f63-b77f-4a48-af53-0a494154600d\"}",
+          "action": "s3:GetObject",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:20693f63-b77f-4a48-af53-0a494154600d\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-26T23:39:45.816Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-26-23/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61 is not authorized to perform: s3:GetObject on resource: \\\\\\\"arn:aws:s3:::cdk-test-dev-databuckete3889a50-x7o7y3babxi6/data/test-file.json\\\\\\\" with an explicit deny in an identity-based policy\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:33:22\\\"]}\",\"error\":\"AccessDenied\"},\"redrive_count\":\"0\",\"id\":\"16\",\"type\":\"ExecutionFailed\",\"previous_event_id\":\"15\",\"event_timestamp\":\"1748302785816\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:20693f63-b77f-4a48-af53-0a494154600d\"}",
+          "action": "s3:GetObject",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:20693f63-b77f-4a48-af53-0a494154600d\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-ReadLambdaServiceRole786C9B4A-4w18aclxSaZX/cdk-test-dev-ReadLambda25A29444-FMFBEqFSuc61",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-27T05:44:03.443Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-27-05/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m is not authorized to perform: kms:GenerateDataKey on resource: arn:aws:kms:eu-west-1:396913727235:key/456f2a84-04f3-4fad-9166-4f9b7fbb2f51 because no identity-based policy allows the kms:GenerateDataKey action\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m is not authorized to perform: kms:GenerateDataKey on resource: arn:aws:kms:eu-west-1:396913727235:key/456f2a84-04f3-4fad-9166-4f9b7fbb2f51 because no identity-based policy allows the kms:GenerateDataKey action\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/index.js:318:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\"]}\",\"error\":\"AccessDenied\",\"resource\":\"invoke\",\"resourceType\":\"lambda\"},\"redrive_count\":\"0\",\"id\":\"5\",\"type\":\"TaskFailed\",\"previous_event_id\":\"4\",\"event_timestamp\":\"1748324643443\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:ad39f1ac-6170-44cb-91da-7d02ea2e7924\"}",
+          "action": "kms:GenerateDataKey",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:ad39f1ac-6170-44cb-91da-7d02ea2e7924\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-27T05:44:03.491Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-27-05/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m is not authorized to perform: kms:GenerateDataKey on resource: arn:aws:kms:eu-west-1:396913727235:key/456f2a84-04f3-4fad-9166-4f9b7fbb2f51 because no identity-based policy allows the kms:GenerateDataKey action\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m is not authorized to perform: kms:GenerateDataKey on resource: arn:aws:kms:eu-west-1:396913727235:key/456f2a84-04f3-4fad-9166-4f9b7fbb2f51 because no identity-based policy allows the kms:GenerateDataKey action\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/index.js:318:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\"]}\",\"error\":\"AccessDenied\"},\"redrive_count\":\"0\",\"id\":\"6\",\"type\":\"ExecutionFailed\",\"previous_event_id\":\"5\",\"event_timestamp\":\"1748324643491\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:ad39f1ac-6170-44cb-91da-7d02ea2e7924\"}",
+          "action": "kms:GenerateDataKey",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:ad39f1ac-6170-44cb-91da-7d02ea2e7924\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-27T05:44:19.108Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-27-05/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m is not authorized to perform: kms:GenerateDataKey on resource: arn:aws:kms:eu-west-1:396913727235:key/456f2a84-04f3-4fad-9166-4f9b7fbb2f51 because no identity-based policy allows the kms:GenerateDataKey action\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m is not authorized to perform: kms:GenerateDataKey on resource: arn:aws:kms:eu-west-1:396913727235:key/456f2a84-04f3-4fad-9166-4f9b7fbb2f51 because no identity-based policy allows the kms:GenerateDataKey action\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/index.js:318:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\"]}\",\"error\":\"AccessDenied\",\"resource\":\"invoke\",\"resourceType\":\"lambda\"},\"redrive_count\":\"0\",\"id\":\"5\",\"type\":\"TaskFailed\",\"previous_event_id\":\"4\",\"event_timestamp\":\"1748324659108\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:60cead9d-f7c7-4a26-8bf1-f992013844d5\"}",
+          "action": "kms:GenerateDataKey",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:60cead9d-f7c7-4a26-8bf1-f992013844d5\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "timestamp": "2025-05-27T05:44:19.135Z",
+          "logGroup": "cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE",
+          "logStream": "states/DataProcessingStateMachine0D2DFF93-wziTuKECnLWS/2025-05-27-05/00000000",
+          "message": "{\"details\":{\"cause\":\"{\\\"errorType\\\":\\\"AccessDenied\\\",\\\"errorMessage\\\":\\\"User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m is not authorized to perform: kms:GenerateDataKey on resource: arn:aws:kms:eu-west-1:396913727235:key/456f2a84-04f3-4fad-9166-4f9b7fbb2f51 because no identity-based policy allows the kms:GenerateDataKey action\\\",\\\"trace\\\":[\\\"AccessDenied: User: arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m is not authorized to perform: kms:GenerateDataKey on resource: arn:aws:kms:eu-west-1:396913727235:key/456f2a84-04f3-4fad-9166-4f9b7fbb2f51 because no identity-based policy allows the kms:GenerateDataKey action\\\",\\\"    at throwDefaultError (/var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:867:20)\\\",\\\"    at /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/smithy-client/dist-cjs/index.js:876:5\\\",\\\"    at de_CommandError (/var/runtime/node_modules/@aws-sdk/client-s3/dist-cjs/index.js:4953:14)\\\",\\\"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-serde/dist-cjs/index.js:35:20\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:484:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/node_modules/@smithy/middleware-retry/dist-cjs/index.js:320:38\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-flexible-checksums/dist-cjs/index.js:318:18\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:110:22\\\",\\\"    at async /var/runtime/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:137:14\\\"]}\",\"error\":\"AccessDenied\"},\"redrive_count\":\"0\",\"id\":\"6\",\"type\":\"ExecutionFailed\",\"previous_event_id\":\"5\",\"event_timestamp\":\"1748324659135\",\"execution_arn\":\"arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:60cead9d-f7c7-4a26-8bf1-f992013844d5\"}",
+          "action": "kms:GenerateDataKey",
+          "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:60cead9d-f7c7-4a26-8bf1-f992013844d5\"}",
+          "principal": "arn:aws:sts::396913727235:assumed-role/cdk-test-dev-WriteLambdaServiceRole903EC6B6-hIVXifQCHnSl/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m",
+          "errorCode": "AccessDenied"
+        }
+      ],
+      "totalEvents": 10,
+      "timeRange": {
+        "start": "2025-05-20T05:53:44.282Z",
+        "end": "2025-05-27T05:53:44.282Z"
+      }
+    },
+    {
+      "logGroupName": "/aws/lambda/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m",
+      "associatedResource": {
+        "logicalId": "WriteLambda0E72B4A4",
+        "physicalId": "cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m",
+        "resourceType": "AWS::Lambda::Function",
+        "logGroups": [
+          "/aws/lambda/cdk-test-dev-WriteLambda0E72B4A4-lO75v7xUZ47m"
+        ],
+        "associatedRoles": [
+          "WriteLambda0E72B4A4-ExecutionRole"
+        ],
+        "associatedPolicies": []
+      },
+      "permissionDenials": [],
+      "totalEvents": 0,
+      "timeRange": {
+        "start": "2025-05-20T05:53:44.282Z",
+        "end": "2025-05-27T05:53:44.282Z"
+      }
+    }
+  ],
+  "suggestedPermissions": [
+    {
+      "action": "s3:getobject",
+      "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:5df1969b-1270-4589-a0b3-ecc5861a35cf\"}",
+      "effect": "Allow",
+      "reasoning": "Permission denied in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE: AccessDenied; Additional denial in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE: AccessDenied. Associated with CloudFormation resources: StepFunctionLogGroup5D8A5468",
+      "frequency": 4,
+      "severity": "Critical"
+    },
+    {
+      "action": "s3:getobject",
+      "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:20693f63-b77f-4a48-af53-0a494154600d\"}",
+      "effect": "Allow",
+      "reasoning": "Permission denied in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE: AccessDenied; Additional denial in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE: AccessDenied. Associated with CloudFormation resources: StepFunctionLogGroup5D8A5468",
+      "frequency": 2,
+      "severity": "Critical"
+    },
+    {
+      "action": "kms:generatedatakey",
+      "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:ad39f1ac-6170-44cb-91da-7d02ea2e7924\"}",
+      "effect": "Allow",
+      "reasoning": "Permission denied in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE: AccessDenied; Additional denial in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE: AccessDenied. Associated with CloudFormation resources: StepFunctionLogGroup5D8A5468",
+      "frequency": 2,
+      "severity": "Medium"
+    },
+    {
+      "action": "kms:generatedatakey",
+      "resource": "arn:aws:states:eu-west-1:396913727235:execution:DataProcessingStateMachine0D2DFF93-wziTuKECnLWS:60cead9d-f7c7-4a26-8bf1-f992013844d5\"}",
+      "effect": "Allow",
+      "reasoning": "Permission denied in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE: AccessDenied; Additional denial in cdk-test-dev-StepFunctionLogGroup5D8A5468-CyZ5WukCMeuE: AccessDenied. Associated with CloudFormation resources: StepFunctionLogGroup5D8A5468",
+      "frequency": 2,
+      "severity": "Medium"
+    }
+  ],
+  "analysisTimestamp": "2025-05-27T05:53:47.024Z"
+}
+
+✅ Analysis completed successfully!
+⚠️  Found 10 permission denials
+🚨 2 critical issues require immediate attention
