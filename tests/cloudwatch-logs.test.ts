@@ -136,15 +136,19 @@ describe('CloudWatchLogsService', () => {
       const logGroups = ['/aws/lambda/test-function-1', '/aws/lambda/test-function-2'];
 
       mockClient.send
+        // First checkLogGroupExists for test-function-1
         .mockResolvedValueOnce({
           logGroups: [{ logGroupName: '/aws/lambda/test-function-1' }],
         })
-        .mockResolvedValueOnce({
-          events: [],
-        })
+        // Second checkLogGroupExists for test-function-2
         .mockResolvedValueOnce({
           logGroups: [{ logGroupName: '/aws/lambda/test-function-2' }],
         })
+        // First searchPermissionDenials for test-function-1
+        .mockResolvedValueOnce({
+          events: [],
+        })
+        // Second searchPermissionDenials for test-function-2
         .mockResolvedValueOnce({
           events: [],
         });

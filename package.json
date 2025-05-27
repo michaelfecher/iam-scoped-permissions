@@ -8,6 +8,7 @@
     "build": "tsc",
     "start": "node dist/src/index.js",
     "dev": "tsx src/index.ts",
+    "analyze": "node dist/src/index.js analyze",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write src/**/*.ts",

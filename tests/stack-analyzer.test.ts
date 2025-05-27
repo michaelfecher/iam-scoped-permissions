@@ -19,6 +19,7 @@ describe('StackAnalyzerService', () => {
     mockCfService = {
       getStackInfo: jest.fn(),
       getStackResources: jest.fn(),
+      getStackLogGroups: jest.fn(),
     } as any;
 
     mockLogsService = {
@@ -105,6 +106,11 @@ describe('StackAnalyzerService', () => {
 
       mockCfService.getStackInfo.mockResolvedValue(mockStackInfo);
       mockCfService.getStackResources.mockResolvedValue(mockResources);
+      mockCfService.getStackLogGroups.mockResolvedValue({
+        explicit: [],
+        referenced: ['/aws/lambda/test-function'],
+        all: ['/aws/lambda/test-function']
+      });
       mockLogsService.analyzeLogGroups.mockResolvedValue(mockLogAnalysisResults);
       mockPermissionAnalyzer.analyzeLogs.mockReturnValue(mockSuggestedPermissions);
 
@@ -112,11 +118,13 @@ describe('StackAnalyzerService', () => {
 
       expect(mockCfService.getStackInfo).toHaveBeenCalledWith('test-stack');
       expect(mockCfService.getStackResources).toHaveBeenCalledWith('test-stack');
+      expect(mockCfService.getStackLogGroups).toHaveBeenCalledWith('test-stack');
       expect(mockLogsService.analyzeLogGroups).toHaveBeenCalledWith(
         ['/aws/lambda/test-function'],
         mockResources,
         7,
-        1000
+        1000,
+        undefined
       );
       expect(mockPermissionAnalyzer.analyzeLogs).toHaveBeenCalledWith(mockLogAnalysisResults);
 
@@ -161,6 +169,11 @@ describe('StackAnalyzerService', () => {
          status: 'CREATE_COMPLETE',
        });
       mockCfService.getStackResources.mockResolvedValue(mockResources);
+      mockCfService.getStackLogGroups.mockResolvedValue({
+        explicit: [],
+        referenced: ['/aws/lambda/test-function', '/aws/apigateway/test-api'],
+        all: ['/aws/lambda/test-function', '/aws/apigateway/test-api']
+      });
       mockLogsService.analyzeLogGroups.mockResolvedValue([]);
       mockPermissionAnalyzer.analyzeLogs.mockReturnValue([]);
 
@@ -171,7 +184,8 @@ describe('StackAnalyzerService', () => {
         ['/aws/lambda/test-function'],
         mockResources,
         7,
-        1000
+        1000,
+        undefined
       );
     });
 
@@ -205,6 +219,11 @@ describe('StackAnalyzerService', () => {
          status: 'CREATE_COMPLETE',
        });
       mockCfService.getStackResources.mockResolvedValue(mockResources);
+      mockCfService.getStackLogGroups.mockResolvedValue({
+        explicit: [],
+        referenced: ['/aws/lambda/test-function', '/aws/apigateway/test-api'],
+        all: ['/aws/lambda/test-function', '/aws/apigateway/test-api']
+      });
       mockLogsService.analyzeLogGroups.mockResolvedValue([]);
       mockPermissionAnalyzer.analyzeLogs.mockReturnValue([]);
 
@@ -215,7 +234,8 @@ describe('StackAnalyzerService', () => {
         ['/aws/lambda/test-function'],
         mockResources,
         7,
-        1000
+        1000,
+        undefined
       );
     });
 
@@ -243,6 +263,11 @@ describe('StackAnalyzerService', () => {
          status: 'CREATE_COMPLETE',
        });
        mockCfService.getStackResources.mockResolvedValue(mockResources);
+       mockCfService.getStackLogGroups.mockResolvedValue({
+         explicit: [],
+         referenced: [],
+         all: []
+       });
        mockLogsService.analyzeLogGroups.mockResolvedValue([]);
        mockPermissionAnalyzer.analyzeLogs.mockReturnValue([]);
 
@@ -253,7 +278,8 @@ describe('StackAnalyzerService', () => {
          [],
          mockResources,
          7,
-         1000
+         1000,
+         undefined
        );
     });
   });

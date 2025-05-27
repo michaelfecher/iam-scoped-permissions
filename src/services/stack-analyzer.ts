@@ -23,12 +23,56 @@ export class StackAnalyzerService {
 
     console.log(`Found ${resources.length} resources in stack`);
 
-    // 2. Collect all log groups from the resources
+    // 2. Collect log groups using the improved approach
     const allLogGroups = new Set<string>();
 
-    for (const resource of resources) {
-      for (const logGroup of resource.logGroups) {
-        allLogGroups.add(logGroup);
+    // 2a. Get log groups from CloudFormation stack (explicit + referenced)
+    console.log('🔍 Getting log groups from CloudFormation stack...');
+    const stackLogGroups = await this.cfService.getStackLogGroups(config.stackName);
+    
+    console.log(`   - ${stackLogGroups.explicit.length} explicit log group resources`);
+    console.log(`   - ${stackLogGroups.referenced.length} referenced log groups from services`);
+    
+    // Add all discovered log groups
+    for (const logGroup of stackLogGroups.all) {
+      allLogGroups.add(logGroup);
+    }
+
+    // 2a2. Optionally discover additional stack-related log groups
+    if (config.discoverStackRelated) {
+      console.log('🔍 Discovering additional stack-related log groups...');
+      try {
+        const discovered = await this.logsService.discoverAllLogGroups(config.stackName);
+        console.log(`   - Found ${discovered.stackRelated.length} additional stack-related log groups`);
+        for (const logGroup of discovered.stackRelated) {
+          if (!allLogGroups.has(logGroup)) { // Avoid duplicates
+            allLogGroups.add(logGroup);
+          }
+        }
+      } catch (error) {
+        console.warn('⚠️  Failed to discover stack-related log groups:', error);
+      }
+    }
+
+    // 2b. Add external log groups if specified
+    if (config.externalLogGroups && config.externalLogGroups.length > 0) {
+      console.log(`Adding ${config.externalLogGroups.length} external log groups to analysis`);
+      for (const externalLogGroup of config.externalLogGroups) {
+        allLogGroups.add(externalLogGroup);
+      }
+    }
+
+    // 2c. Add CloudTrail log groups if requested
+    if (config.includeCloudTrail) {
+      console.log('🔍 Discovering CloudTrail log groups...');
+      try {
+        const cloudTrailLogGroups = await this.logsService.discoverCloudTrailLogGroups();
+        console.log(`Found ${cloudTrailLogGroups.length} CloudTrail log groups`);
+        for (const ctLogGroup of cloudTrailLogGroups) {
+          allLogGroups.add(ctLogGroup);
+        }
+      } catch (error) {
+        console.warn('⚠️  Failed to discover CloudTrail log groups:', error);
       }
     }
 
@@ -48,13 +92,18 @@ export class StackAnalyzerService {
     }
 
     console.log(`Analyzing ${filteredLogGroups.length} log groups`);
+    
+    if (config.rolePatterns && config.rolePatterns.length > 0) {
+      console.log(`🔍 Applying role pattern filters: ${config.rolePatterns.join(', ')}`);
+    }
 
     // 3. Analyze logs for permission denials
     const logAnalysisResults = await this.logsService.analyzeLogGroups(
       filteredLogGroups,
       resources,
       config.lookbackDays,
-      config.maxLogEvents
+      config.maxLogEvents,
+      config.rolePatterns
     );
 
     console.log(

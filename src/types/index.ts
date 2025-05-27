@@ -58,6 +58,12 @@ export interface AnalysisConfig {
   maxLogEvents: number;
   includePatterns: string[];
   excludePatterns: string[];
+  
+  // NEW: External analysis capabilities
+  externalLogGroups?: string[];
+  includeCloudTrail?: boolean;
+  rolePatterns?: string[];
+  discoverStackRelated?: boolean; // Discover additional log groups related to the stack
 }
 
 export interface AWSCredentials {
